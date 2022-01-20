@@ -1,6 +1,6 @@
 
-CROSS_COMPILE=arm-none-linux-gnueabi-
-STRIP=arm-none-linux-gnueabi-strip
+CROSS_COMPILE=arm-linux-gnueabihf-
+STRIP=arm-linux-gnueabihf-strip
 
 CC=$(CROSS_COMPILE)gcc
 

@@ -633,9 +633,12 @@ static void init_device(void)
         CLEAR(fmt);
 
         fmt.type		= V4L2_BUF_TYPE_VIDEO_CAPTURE;
-	fmt.fmt.pix.width       = force_width; //replace
-	fmt.fmt.pix.height      = force_height; //replace
+	fmt.fmt.pix.width       = 640; //replace
+	// fmt.fmt.pix.width       = force_width; //replace
+	// fmt.fmt.pix.height      = force_height; //replace
+	fmt.fmt.pix.height      = 480; //replace
 	fmt.fmt.pix.field       = V4L2_FIELD_ANY;
+        fmt.fmt.pix.pixelformat = V4L2_PIX_FMT_YUYV;
 
 	if (-1 == xioctl(fd, VIDIOC_S_FMT, &fmt))
 		errno_exit("VIDIOC_S_FMT");
